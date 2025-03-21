@@ -32,6 +32,7 @@
 		  <a class="navbar-brand" href="#projekts">Projekte</a>
 		  <!--<a class="navbar-brand" href="#press_news">Presse & Talks</a> -->
 		  <a class="navbar-brand" href="#team">Team</a>
+      <a class="navbar-brand" href="#donate">Donate</a>
 		  <a class="navbar-brand" href="#impressum">Impressum</a>
 		</div>
     </nav>
@@ -260,6 +261,46 @@
       </div>
     </section>
 
+        <!-- Spenden Abschnitt -->
+        <section class="testimonials text-center bg-light" id="donate">
+          <div class="container">
+            <h2 class="mb-2">Spenden / Donate</h2>
+            <div class="row">
+
+              <div class="col-lg-12">
+                <div class="testimonial-item mx-auto mb-8 mb-lg-0">
+                  <img class="img-fluid rounded-circle mb-3" src="img/bitcoin-btc-logo.png" alt="">
+                  <img class="img-fluid mb-3" src="img/gc2_bitcoin.png" alt="">
+                  <h5>Bitcoin</h5>
+
+                  <div class="clipboard-example align-items-center w-200">
+                    <div class="input-group mb-3">
+                        <input id="bitcoin"
+                              type="text"
+                              class="form-control"
+                              placeholder="BTC Address..."
+                              aria-label="BTC Address"
+                              aria-describedby="btn01"
+                              value="bc1qtpka0cwqsm7lc8m5ujfl9zc7axz7dlesw5xm52"
+                              readonly
+                        >
+                        <button id="btn01"
+                                class="btn btn-dark"
+                                type="button"
+                                data-clipboard-demo=""
+                                data-clipboard-target="#bitcoin"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="bottom"
+                                title="Copy to Clipboard"
+                                onclick="CopyToClipboard()"
+                        >Copy</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
 
     <!-- Footer -->
     <footer class="footer bg-light">
@@ -268,7 +309,7 @@
         <div class="row">
 			  <div class="col-lg-6 h-100 text-center text-lg-left my-auto"> 
 			
-				<h5>Verein: Grazer Computer Club - GC²</h5>
+				<h5>Verein: Grazer Computer Club - GC2</h5>
 				<h6>ZVR: 1093020071</h6>
 				<h6>Rechtlicher Sitz: Graz</h6>
 			</div>
@@ -301,11 +342,29 @@
 	  
 	  
 
+
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function CopyToClipboard() {
+        // Get the text field
+        var copyText = document.getElementById("bitcoin");
+
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
+
+        // show for testing
+        //alert("Copied the text: " + copyText.value);
+      }
+  </script>
 
   </body>
 
